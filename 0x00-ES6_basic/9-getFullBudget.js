@@ -11,4 +11,4 @@ export default function getFullBudgetObject(income, gdp, capita) {
   return fullBudget;
 }
 
-console.log(getFullBudgetObject(1200, 3000, 4900));
+// console.log(getFullBudgetObject(1200, 3000, 4900));
