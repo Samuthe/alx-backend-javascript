@@ -6,3 +6,4 @@ export default function appendToEachArrayValue(array, appendString) {
 
   return ar;
 }
+// console.log(appendToEachArrayValue(['appended', 'fixed', 'displayed'], 'correctly-'));
