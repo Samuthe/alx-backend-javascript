@@ -1,4 +1,5 @@
-export default function concateArrays(array1, array2, string) {
-  const x = array1.concat(array2, ...string);
-  return x;
+function concateArrays(array1, array2, string) {
+  return [...array1, ...array2, ...string];
 }
+
+console.log(concateArrays(['a', 'b'], ['c', 'd'], 'hello'));
