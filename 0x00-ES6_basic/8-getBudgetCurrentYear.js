@@ -13,4 +13,4 @@ export default function getBudgetForCurrentYear(income, gdp, capita) {
 
   return budget;
 }
-console.log(getBudgetForCurrentYear());
+// console.log(getBudgetForCurrentYear('cars', 'motors', 'containers'));
