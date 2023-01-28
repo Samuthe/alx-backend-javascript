@@ -23,6 +23,6 @@ export default class Currency{
     }
 
     displayFullCurrenct() {
-        return `${this._code} ${this._name}`                
+        return `${this._code} (${this._name})`                
     }
 }
