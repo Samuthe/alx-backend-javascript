@@ -48,7 +48,7 @@ class Pricing{
         if(typeof(conversionRate) !== 'number'){
             throw new TypeError('conversionRate must be a number')
         }
-        return amount * conversionRate
         }
+        return amount * conversionRate
     }
 }
