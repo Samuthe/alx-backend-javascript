@@ -1,3 +1,7 @@
+/**
+ * implement a class with get and set functions
+ */
+
 export default class Currency{
     constructor(code, name){
         this.code = code
