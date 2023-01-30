@@ -2,7 +2,7 @@
  * Implementing an abstruct class
  */
 
-export default class Building{
+class Building{
     constructor(sqft){
         if(this.constructor !== Building){
             if(typeof this.evacuationWarningMessage !== 'function'){
@@ -27,3 +27,5 @@ export default class Building{
         return this._sqft
     }
 }
+
+export default Building
