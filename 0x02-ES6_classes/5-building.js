@@ -11,6 +11,7 @@ export default class Building{
         }
         this.sqft = sqft
     }
+
     /**
      * 
      * implement get and set methods
@@ -21,7 +22,7 @@ export default class Building{
     }
     set(sqft){
         if(typeof sqft !== 'number'){
-            throw new TypeError('Must be a number');
+            throw new TypeError('sqft must be a number');
         }
         return this._sqft
     }
