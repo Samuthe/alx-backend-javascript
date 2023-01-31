@@ -1,5 +1,4 @@
 /**
- * 
  * @param {true} success 
  * @returns {Error} reject
  */
