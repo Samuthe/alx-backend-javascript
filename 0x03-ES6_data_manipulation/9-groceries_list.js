@@ -7,5 +7,5 @@ export default function groceriesList() {
     ['Banana', 5],
   ];
 
-  return new values.Map();
+  return new Map(values);
 }
