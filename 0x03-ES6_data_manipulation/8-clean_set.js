@@ -8,5 +8,5 @@ export default function cleanSet(set, startString) {
   [...set].forEach((y) => {
     if (y && y.indexOf(startString) === 0) myString.push(y.replace(myString, ''));
   });
-  return myString;
+  return myString.join('-');
 }
