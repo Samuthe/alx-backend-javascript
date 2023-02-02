@@ -1,12 +1,11 @@
-/* eslint-disable valid-typeof */
-export default function cleanSet(set, startString) {
-  if (typeof set !== 'object') return '';
+export default function cleanSet(_set, startString) {
+  if (typeof _set !== 'object') return '';
   if (typeof startString !== 'string') return '';
-  if (typeof startString.length === 0) return '';
+  if (startString.length === 0) return '';
 
-  const myString = [];
-  [...set].forEach((y) => {
-    if (y && y.indexOf(startString) === 0) myString.push(y.replace(myString, ''));
+  const stringSet = [];
+  [..._set].forEach((x) => {
+    if (x && x.indexOf(startString) === 0) stringSet.push(x.replace(startString, ''));
   });
-  return myString.join('-');
+  return stringSet.join('-');
 }
