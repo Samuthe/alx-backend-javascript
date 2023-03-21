@@ -19,7 +19,7 @@ const countStudents = async (path) => {
       firstName: row[0],
       lastName: row[1],
       age: row[2],
-      field: row[3].replace('\r', ''),
+      field: row[3].replace('\r', '')
     }));
   // generate CS students
   const CS = students.filter((student) => student.field === 'CS')
