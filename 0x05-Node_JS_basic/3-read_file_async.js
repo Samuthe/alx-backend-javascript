@@ -1,6 +1,7 @@
-//read files with async
+// read files with async
 const fs = require('fs');
 
+// try error catch block
 const countStudents = async (path) => {
   let data;
   try {
