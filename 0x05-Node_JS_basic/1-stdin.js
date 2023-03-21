@@ -12,4 +12,3 @@ stdin.on('readable', () => {
 process.on('exit', () => {
   stdout.write('This important software is now closing\n');
 });
-
