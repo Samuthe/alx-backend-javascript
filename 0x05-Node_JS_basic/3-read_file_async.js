@@ -1,41 +1,37 @@
 const fs = require('fs');
 
-/**
- * Reads CSV file asynchronously, parses the data and
- * prints it to stdout.
- * @param {string} dbPath - path to csv file.
- */
-function countStudents (dbPath) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(dbPath, 'utf-8', (error, data) => {
-      if (!error) {
-        let students = data.split('\n');
-        students = students.slice(1, students.length - 1);
-        const courses = new Map();
+const countStudents = async (path) => {
+  let data;
+  try {
+    data = await fs.promises.readFile(path, 'utf8');
+  } catch (error) {
+    throw new Error('Cannot load the database');
+  }
 
-        // Parse CSV data creating a map of courseData objects.
-        students.forEach((student) => {
-          const studentData = student.split(',');
-          const firstName = studentData[0];
-          const field = studentData[3];
-          if (courses.has(field)) {
-            courses.get(field).students.push(firstName);
-            courses.get(field).count += 1;
-          } else {
-            courses.set(field, { students: [firstName], count: 1 });
-          }
-        });
-
-        // Display information from map
-        console.log(`Number of students: ${students.length}`);
-        courses.forEach((courseData, course) => {
-          console.log(`Number of students in ${course}: ${courseData.count}. List: ${courseData.students.join(', ')}`);
-        });
-        resolve();
-      }
-      reject(Error('Cannot load the database'));
-    });
-  });
-}
+  // split where a new line exists
+  const students = data.split('\n')
+    // turn a row into an array by splitting by a ','
+    .map((row) => row.split(','))
+    // skip first row
+    .filter((row) => row.length === 4 && row[0] !== 'firstname')
+    // covert into objects
+    .map((row) => ({
+      firstName: row[0],
+      lastName: row[1],
+      age: row[2],
+      field: row[3].replace('\r', ''),
+    }));
+  // generate CS students
+  const CS = students.filter((student) => student.field === 'CS')
+    .map((student) => student.firstName);
+  // generate SWE students
+  const SWE = students.filter((student) => student.field === 'SWE')
+    .map((student) => student.firstName);
+  // print length and convert each into a string
+  console.log(`Number of students: ${students.length}`);
+  console.log(`Number of students in CS: ${CS.length}. List: ${CS.join(', ')}`);
+  console.log(`Number of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`);
+  return { students, CS, SWE };
+};
 
 module.exports = countStudents;
