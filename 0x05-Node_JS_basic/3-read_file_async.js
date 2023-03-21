@@ -5,7 +5,7 @@ const fs = require('fs');
  * prints it to stdout.
  * @param {string} dbPath - path to csv file.
  */
-function countStudents(dbPath) {
+function countStudents (dbPath) {
   return new Promise((resolve, reject) => {
     fs.readFile(dbPath, 'utf-8', (error, data) => {
       if (!error) {

@@ -5,7 +5,7 @@ const fs = require('fs');
  * prints it to stdout.
  * @param {string} dbPath - path to csv file.
  */
-function countStudents(dbPath) {
+function countStudents (dbPath) {
   try {
     let students = fs.readFileSync(dbPath, 'utf-8');
     students = students.split('\n');
