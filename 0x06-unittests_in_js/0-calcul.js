@@ -9,11 +9,3 @@ const calculateNumber = (a, b) => {
 // console.log(calculateNumber(2, 5))
 
 module.exports = calculateNumber;
-
-
-// const calculateNumber = (a, b) => {
-//     return a + b
-// }
-// // console.log(calculateNumber(2, 3))
-
-// module.exports = calculateNumber
