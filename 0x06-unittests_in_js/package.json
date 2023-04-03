@@ -13,6 +13,7 @@
     "mocha": "^10.2.0"
   },
   "dependencies": {
+    "8-api": "file:10-api",
     "sinon": "^15.0.2",
     "utils": "^0.3.1"
   }
